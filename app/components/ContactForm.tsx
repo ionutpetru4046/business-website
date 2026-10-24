@@ -1,9 +1,10 @@
-
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 
 export default function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,7 +16,7 @@ export default function ContactForm() {
   function handleChange(
     event: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) {
     const { name, value } = event.target;
 
@@ -25,11 +26,59 @@ export default function ContactForm() {
     }));
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // Temporary: inspect submitted values while testing the form.
-    console.log("Project enquiry:", formData);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: [
+            `Project type: ${formData.projectType}`,
+            `Budget: ${formData.budget || "Not specified"}`,
+            "",
+            "Project requirements:",
+            formData.requirements,
+          ].join("\n"),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send your enquiry.");
+      }
+
+      toast.success("Enquiry sent successfully!", {
+        description: "Thank you. I'll get back to you as soon as possible.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        projectType: "",
+        budget: "",
+        requirements: "",
+      });
+    } catch (error) {
+      toast.error("Your enquiry could not be sent.", {
+        description:
+          error instanceof Error
+            ? error.message
+            : "Please try again in a moment.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -143,14 +192,15 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+        disabled={isSubmitting}
+        className="w-full rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Submit Enquiry
+        {isSubmitting ? "Sending..." : "Submit Enquiry"}
       </button>
 
       <p className="text-sm text-slate-500">
-        This form is currently a UI prototype. It does not send or save your
-        enquiry yet.
+        Your project details will be sent by email so I can respond to your
+        enquiry.
       </p>
     </form>
   );
