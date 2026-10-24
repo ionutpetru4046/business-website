@@ -57,9 +57,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
-      {/* The nav is outside of the header to ensure 'sticky' on all devices including mobile */}
+      {/* Changed nav to fixed for always on top while scrolling */}
       <nav
-        className="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/90 backdrop-blur-md"
+        className="fixed top-0 left-0 z-50 w-full border-b border-slate-800 bg-slate-950/90 backdrop-blur-md"
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto">
@@ -155,94 +155,97 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 sm:px-6 py-16 sm:py-24">
-        <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-cyan-400 text-center sm:text-left">
-          Full-Stack Developer
-        </p>
-
-        <h1 className="max-w-4xl text-3xl sm:text-4xl font-bold tracking-tight sm:text-6xl text-center sm:text-left">
-          I build web applications that solve real business problems.
-        </h1>
-
-        <p className="mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-300 text-center sm:text-left">
-          I work with React, Next.js, TypeScript, Node.js and modern web
-          technologies to build useful, reliable digital products.
-        </p>
-
-        <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center sm:justify-start">
-          <a
-            href="#projects"
-            onClick={handleNavClick}
-            className="rounded-lg bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[150px] text-center"
-          >
-            View my projects
-          </a>
-
-          <a
-            href="mailto:your-email@example.com"
-            className="rounded-lg border border-slate-600 px-8 py-3 font-semibold transition hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[150px] text-center"
-          >
-            Contact me
-          </a>
-        </div>
-      </section>
-
-      <section
-        id="projects"
-        className="border-t border-slate-800 bg-slate-900/50 px-4 sm:px-6 py-16 sm:py-24"
-      >
-        <div className="mx-auto max-w-7xl">
-          <p className="font-medium text-cyan-400">MY WORK</p>
-
-          <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white md:text-4xl">
-            Featured Projects
-          </h2>
-
-          <p className="mt-4 max-w-2xl leading-7 text-slate-300">
-            A selection of web applications I have built, demonstrating my
-            experience with frontend interfaces, backend APIs, authentication
-            and database integration.
-          </p>
-          <ProjectList />
-        </div>
-      </section>
-
-      <AboutSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <ContactForm />
-
-      <section
-        id="contact"
-        className="border-t border-slate-800 bg-slate-950 px-4 sm:px-6 py-16 sm:py-24"
-      >
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-medium text-cyan-400">GET IN TOUCH</p>
-
-          <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white md:text-4xl">
-            Have a project in mind?
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">
-            I help businesses build modern websites, web applications and custom
-            software. If you have a project or an opportunity to discuss, I
-            would be happy to hear from you.
+      {/* Add top padding to offset for fixed nav (py-20 for safety if nav height increases) */}
+      <div className="pt-20">
+        <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 sm:px-6 py-16 sm:py-24">
+          <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-cyan-400 text-center sm:text-left">
+            Full-Stack Developer
           </p>
 
-          <a
-            href="mailto:YOUR_EMAIL@example.com?subject=Website%20Enquiry"
-            className="mt-8 inline-flex justify-center rounded-lg bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[150px]"
-          >
-            Contact Me →
-          </a>
+          <h1 className="max-w-4xl text-3xl sm:text-4xl font-bold tracking-tight sm:text-6xl text-center sm:text-left">
+            I build web applications that solve real business problems.
+          </h1>
 
-          <p className="mt-5 text-sm text-slate-400">
-            Available for full-stack developer opportunities and selected
-            projects.
+          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-300 text-center sm:text-left">
+            I work with React, Next.js, TypeScript, Node.js and modern web
+            technologies to build useful, reliable digital products.
           </p>
-        </div>
-      </section>
+
+          <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center sm:justify-start">
+            <a
+              href="#projects"
+              onClick={handleNavClick}
+              className="rounded-lg bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[150px] text-center"
+            >
+              View my projects
+            </a>
+
+            <a
+              href="mailto:your-email@example.com"
+              className="rounded-lg border border-slate-600 px-8 py-3 font-semibold transition hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[150px] text-center"
+            >
+              Contact me
+            </a>
+          </div>
+        </section>
+
+        <section
+          id="projects"
+          className="border-t border-slate-800 bg-slate-900/50 px-4 sm:px-6 py-16 sm:py-24"
+        >
+          <div className="mx-auto max-w-7xl">
+            <p className="font-medium text-cyan-400">MY WORK</p>
+
+            <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white md:text-4xl">
+              Featured Projects
+            </h2>
+
+            <p className="mt-4 max-w-2xl leading-7 text-slate-300">
+              A selection of web applications I have built, demonstrating my
+              experience with frontend interfaces, backend APIs, authentication
+              and database integration.
+            </p>
+            <ProjectList />
+          </div>
+        </section>
+
+        <AboutSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <PricingSection />
+        <ContactForm />
+
+        <section
+          id="contact"
+          className="border-t border-slate-800 bg-slate-950 px-4 sm:px-6 py-16 sm:py-24"
+        >
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-medium text-cyan-400">GET IN TOUCH</p>
+
+            <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white md:text-4xl">
+              Have a project in mind?
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">
+              I help businesses build modern websites, web applications and custom
+              software. If you have a project or an opportunity to discuss, I
+              would be happy to hear from you.
+            </p>
+
+            <a
+              href="mailto:YOUR_EMAIL@example.com?subject=Website%20Enquiry"
+              className="mt-8 inline-flex justify-center rounded-lg bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[150px]"
+            >
+              Contact Me →
+            </a>
+
+            <p className="mt-5 text-sm text-slate-400">
+              Available for full-stack developer opportunities and selected
+              projects.
+            </p>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
