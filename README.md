@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Coste.Dev – Professional Full-Stack Web Development
 
-## Getting Started
+Welcome to the documentation for **Coste.Dev**, a business website and portfolio for premium web development services. This project showcases custom solutions for businesses, including full-stack applications, CRM systems, booking solutions, and robust API integrations. It is designed and built using modern web technologies such as React, Next.js, Node.js, and TypeScript.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Modern, Responsive Design:** Optimized for all devices and fast loading times.
+- **Project Portfolio:** Detailed showcase of completed works and case studies.
+- **Services Overview:** Clear breakdown of the services offered, tailored for business needs.
+- **Dynamic Pricing Section:** Transparent packages to fit a variety of project scopes.
+- **Real Client Testimonials:** Authentic feedback to inspire confidence.
+- **Contact & Inquiry Form:** Direct channel for potential clients to reach out.
+- **Accessible, Smooth Navigation:** Carefully crafted for usability and accessibility.
+- **SEO Best Practices:** Enhanced structure for discoverability and social sharing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology Stack
 
-## Learn More
+- **Framework:** [Next.js](https://nextjs.org) (App Router) for performance and scalability.
+- **Frontend:** React, TypeScript, and Tailwind CSS for rapid and maintainable UI development.
+- **Fonts:** Uses [Geist](https://vercel.com/font) for a clean, readable aesthetic.
+- **Deployment:** Optimized for Vercel, with built-in analytics and CI/CD.
+- **Accessibility:** Follows standards for keyboard navigation and screen readers.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Getting Started (Development)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Install Dependencies**
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Run Development Server**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+   Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+3. **Edit Content**
+
+   - Update project listings, testimonials, or sections in the `app/components` directory.
+   - Main page structure lives in `app/page.tsx`.
+
+4. **Fonts & Styling**
+
+   - Uses `next/font` for managed font loading.
+   - All global styles in `app/globals.css`, layouts in `app/layout.tsx`.
+
+---
+
+## Deployment
+
+For production deployment, this site is built to run seamlessly on [Vercel](https://vercel.com). To deploy your own instance:
+
+1. Push your repository to GitHub or another Git provider.
+2. Connect your repository in Vercel.
+3. Set your production environment variables if needed.
+4. Vercel handles automatic builds, previews, and production deployments.
+
+For more deployment details, refer to the [official Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
+---
+
+## Customization
+
+- Update **branding**, project information, and contact details in the respective sections and components.
+- Configure the SEO metadata in `app/layout.tsx` as needed.
+- Add or edit services, pricing, and testimonials to best represent your business.
+
+---
+
+## Support & Contributions
+
+Feel free to use this template for your business or portfolio. For custom solutions, feature requests, or reporting issues, please contact [Coste.Dev](mailto:hello@coste.dev).
+
+---
