@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   // Replace this with your real deployed URL when available.
-  metadataBase: new URL("https://YOUR-DEPLOYED-DOMAIN.vercel.app"),
+  metadataBase: new URL("https://business-website-lime-sigma.vercel.app"),
 
   title: {
     default: "Coste.Dev | Full-Stack Web Developer",
