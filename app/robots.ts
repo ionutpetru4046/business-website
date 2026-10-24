@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://YOUR-DEPLOYED-DOMAIN.vercel.app/sitemap.xml",
+    sitemap: "https://business-website-lime-sigma.vercel.app/sitemap.xml",
   };
 }

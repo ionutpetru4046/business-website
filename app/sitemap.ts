@@ -1,21 +1,15 @@
 
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://YOUR-DEPLOYED-DOMAIN.vercel.app";
+const baseUrl = "https://business-website-lime-sigma.vercel.app";
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
-    },
-    {
-      url: `${baseUrl}/test-project`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
     },
   ];
 }
