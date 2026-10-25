@@ -163,13 +163,16 @@ export default function Home() {
         </div>
         <div className="relative z-10 flex flex-col items-center text-center">
           <span className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-            Creative Solutions & Reliable Delivery
+            FULL-STACK DEVELOPER · DUBLIN, IRELAND
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight bg-gradient-to-br from-cyan-300 via-white to-fuchsia-300 bg-clip-text text-transparent drop-shadow-lg tracking-[-.03em] max-w-4xl">
-            Full-Stack Development <br className="hidden sm:inline" />for Ambitious Companies
+            Building Modern Web Applications
+            <br className="hidden sm:inline" />
+            That Solve Real Problems
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-slate-300 font-medium leading-8">
-            I build high-impact web products with Next.js, React, TypeScript, and Node.js.<br className="hidden md:inline" /> <span className="text-cyan-400">Let’s take your business further with modern technology.</span>
+            I’m a full-stack developer with 4 years of experience building web applications using React, Next.js, TypeScript, Node.js, and MongoDB.
+            <span className="text-cyan-400"> From responsive interfaces to backend APIs, I turn ideas into practical digital products.</span>
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -252,7 +255,7 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:YOUR_EMAIL@example.com?subject=Web%20Project%20Enquiry"
+              href="mailto:costewebdev@gmail.com?subject=Web%20Project%20Enquiry"
               className="inline-flex items-center justify-center rounded-lg bg-cyan-400 px-8 py-3 font-semibold text-slate-950 text-lg shadow hover:bg-cyan-300 transition focus-visible:ring-2 focus-visible:ring-cyan-400 min-w-[170px]"
             >
               <svg width={22} height={22} fill="none" viewBox="0 0 22 22" className="mr-2"><path stroke="currentColor" strokeWidth={2} d="M3.75 5.75 11 10.75l7.25-5" /><rect x={3.75} y={5.75} width={14.5} height={8.5} rx={2} stroke="currentColor" strokeWidth={2}/></svg>

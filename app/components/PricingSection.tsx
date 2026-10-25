@@ -101,7 +101,7 @@ const plans = [
                 </ul>
   
                 <a
-                  href={`mailto:YOUR_EMAIL@example.com?subject=${encodeURIComponent(
+                  href={`mailto:costewebdev@gmail.com?subject=${encodeURIComponent(
                     `Enquiry: ${plan.name}`
                   )}`}
                   className={`mt-8 rounded-lg px-5 py-3 text-center font-semibold transition ${
