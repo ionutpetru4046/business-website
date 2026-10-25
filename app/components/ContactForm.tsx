@@ -98,7 +98,7 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+          className="input-field w-full rounded-xl px-4 py-3"
           placeholder="Enter your name"
         />
       </div>
@@ -118,7 +118,7 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+          className="input-field w-full rounded-xl px-4 py-3"
           placeholder="you@example.com"
         />
       </div>
@@ -136,7 +136,7 @@ export default function ContactForm() {
           required
           value={formData.projectType}
           onChange={handleChange}
-          className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+          className="input-field w-full rounded-xl px-4 py-3"
         >
           <option value="">Select a service</option>
           <option value="Business website">Business website</option>
@@ -160,7 +160,7 @@ export default function ContactForm() {
           name="budget"
           value={formData.budget}
           onChange={handleChange}
-          className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+          className="input-field w-full rounded-xl px-4 py-3"
         >
           <option value="">Select a budget (optional)</option>
           <option value="Under €500">Under €500</option>
@@ -185,7 +185,7 @@ export default function ContactForm() {
           rows={5}
           value={formData.requirements}
           onChange={handleChange}
-          className="w-full resize-y rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+          className="input-field w-full resize-y rounded-xl px-4 py-3"
           placeholder="What are you looking to build or improve?"
         />
       </div>
@@ -193,7 +193,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn-primary w-full rounded-full px-6 py-3 font-semibold disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Sending..." : "Submit Enquiry"}
       </button>

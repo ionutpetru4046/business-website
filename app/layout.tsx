@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "sonner";
@@ -10,7 +10,12 @@ const inter = Inter({
   display: "swap",
 });
 
-// Correct and robust metadata for SEO, social, and verification
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://business-website-lime-sigma.vercel.app"),
   title: {
@@ -58,7 +63,7 @@ export const metadata: Metadata = {
     title: "Coste.Dev | Full-Stack Web Developer",
     description:
       "Modern websites, custom full-stack applications, and advanced API solutions for businesses.",
-    site: "@CosteDev", // Replace with real handle if available
+    site: "@CosteDev",
     images: ["https://business-website-lime-sigma.vercel.app/og-image.png"],
   },
   robots: {
@@ -92,9 +97,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col font-sans">
         {children}
         <Toaster position="top-right" richColors />
         <Analytics />

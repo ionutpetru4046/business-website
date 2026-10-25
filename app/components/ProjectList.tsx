@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -63,10 +62,7 @@ export default function ProjectList() {
 
   return (
     <div>
-      <div
-        className="mt-8 flex flex-wrap gap-3"
-        aria-label="Filter projects"
-      >
+      <div className="mt-8 flex flex-wrap gap-3" aria-label="Filter projects">
         {filters.map((filter) => (
           <button
             key={filter}
@@ -75,8 +71,8 @@ export default function ProjectList() {
             aria-pressed={activeFilter === filter}
             className={`rounded-full border px-5 py-2 text-sm font-medium transition ${
               activeFilter === filter
-                ? "border-cyan-400 bg-cyan-400 text-slate-950"
-                : "border-slate-700 text-slate-300 hover:border-cyan-400 hover:text-white"
+                ? "border-transparent bg-gradient-to-r from-teal-300 to-amber-200 text-slate-950"
+                : "border-white/10 text-slate-300 hover:border-teal-300 hover:text-white"
             }`}
           >
             {filter}
